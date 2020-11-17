@@ -6,7 +6,6 @@ const request = require('request');
 const app = express().use(bodyParser.json());
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-console.log("tokeeeen", PAGE_ACCESS_TOKEN)
 
 function handleMessage(sender_psid, received_message) {
   let response;
@@ -18,9 +17,9 @@ function handleMessage(sender_psid, received_message) {
     response = {
       "text": `You sent the message: "${received_message.text}". Now send me an image!`
     }
-  }  else if (received_message.attachments) {
-    console.log(received_message.attachments[0]);
-    const attachment_url = received_message.attachments[0].payload.url;
+  }  else {
+    // console.log(received_message.attachments[0]);
+    // const attachment_url = received_message.attachments[0].payload.url;
     response = {
       "attachment": {
         "type": "template",
@@ -29,7 +28,7 @@ function handleMessage(sender_psid, received_message) {
           "elements": [{
             "title": "titulo qualquer",
             "subtitle": "aperte um botão para responder",
-            "image_url": attachment_url,
+            // "image_url": attachment_url,
             "buttons": [
               {
                 "type": "postback",
