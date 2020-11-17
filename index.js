@@ -25,24 +25,24 @@ function handleMessage(sender_psid, received_message) {
       "attachment": {
         "type": "template",
         "payload": {
-        "template_type": "generic",
-        "elements": [{
-          "title": "titulo qualquer",
-          "subtitle": "aperte um botão para responder",
-          "image_url": attachment_url,
-          "buttons": [
-            {
-              "type": "postback",
-              "title": "Sim!",
-              "payload": "sim",
-            },
-            {
-              "type": "postback",
-              "title": "Não!",
-              "payload": "não",
-            }
-          ],
-        }]
+          "template_type": "generic",
+          "elements": [{
+            "title": "titulo qualquer",
+            "subtitle": "aperte um botão para responder",
+            // "image_url": attachment_url,
+            "buttons": [
+              {
+                "type": "postback",
+                "title": "Sim!",
+                "payload": "sim",
+              },
+              {
+                "type": "postback",
+                "title": "Não!",
+                "payload": "não",
+              }
+            ],
+          }]
         }
       }
     }
