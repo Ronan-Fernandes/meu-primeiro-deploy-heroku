@@ -4,6 +4,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express().use(bodyParser.json());
 
+app.get('/', (req, res) => {
+  console.log("testandoooo");
+  res.send("testandoooooooo")
+})
+
 app.get('/webhook', (req, res) => {
   const VERIFY_TOKEN = "<YOUR_VERIFY_TOKEN>";
 
