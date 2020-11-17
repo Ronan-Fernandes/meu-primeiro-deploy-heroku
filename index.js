@@ -39,16 +39,6 @@ function handleMessage(sender_psid, received_message) {
                 "type": "postback",
                 "title": "2 - Recargas de celular",
                 "payload": "2",
-              },
-              {
-                "type": "postback",
-                "title": "3 - Pagamentos",
-                "payload": "3",
-              },
-              {
-                "type": "postback",
-                "title": "4 - Pix",
-                "payload": "4",
               }
             ],
           }]
