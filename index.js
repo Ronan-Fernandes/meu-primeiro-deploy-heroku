@@ -29,7 +29,7 @@ function handleMessage(sender_psid, received_message) {
           "elements": [{
             "title": "titulo qualquer",
             "subtitle": "aperte um botão para responder",
-            // "image_url": attachment_url,
+            "image_url": attachment_url,
             "buttons": [
               {
                 "type": "postback",
