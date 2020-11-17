@@ -4,10 +4,22 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express().use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  console.log("testandoooo");
-  res.send("testandoooooooo")
-})
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+console.log("tokeeeen", PAGE_ACCESS_TOKEN)
+
+function handleMessage(sender_psid, received_message) {
+
+}
+
+// Handles messaging_postbacks events
+function handlePostback(sender_psid, received_postback) {
+
+}
+
+// Sends response messages via the Send API
+function callSendAPI(sender_psid, response) {
+  
+}
 
 app.get('/webhook', (req, res) => {
   const VERIFY_TOKEN = "<YOUR_VERIFY_TOKEN>";
@@ -40,8 +52,10 @@ app.post('/webhook', (req, res) => {
 
   if (body.object === 'page') {
     body.entry.forEach((entry) => {
-      const webhook_event = entry.messaging[0].message;
+      const webhook_event = entry.messaging[0];
+      const sender_psid = webhook_event.sender.id;
       console.log("menssage recebi dentro de entrys\n", webhook_event);
+      console.log("sender PSID", sender_psid);
     });
 
     res.status(200).send('EVENT_RECEIVED');
