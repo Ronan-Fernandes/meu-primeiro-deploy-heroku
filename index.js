@@ -26,19 +26,29 @@ function handleMessage(sender_psid, received_message) {
         "payload": {
           "template_type": "generic",
           "elements": [{
-            "title": "titulo qualquer",
-            "subtitle": "aperte um botão para responder",
+            "title": "Menu Inicial",
+            "subtitle": "Realize operações, tire suas duvidas e muito mais.\n seu saldo é *R$ 303,50\nO que você quer ver agora?\n",
             // "image_url": attachment_url,
             "buttons": [
               {
                 "type": "postback",
-                "title": "Sim!",
-                "payload": "sim",
+                "title": "1 - Deposito",
+                "payload": "1",
               },
               {
                 "type": "postback",
-                "title": "Não!",
-                "payload": "não",
+                "title": "2 - Recargas de celular",
+                "payload": "2",
+              },
+              {
+                "type": "postback",
+                "title": "3 - Pagamentos",
+                "payload": "3",
+              },
+              {
+                "type": "postback",
+                "title": "4 - Pix",
+                "payload": "4",
               }
             ],
           }]
