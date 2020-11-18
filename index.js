@@ -41,16 +41,6 @@ function handleMessage(sender_psid, received_message) {
               "type": "postback",
               "title": "2 - Recargas de celular",
               "payload": "2"
-            },
-            {
-              "type": "postback",
-              "title": "2 - Recargas de celular",
-              "payload": "2"
-            },
-            {
-              "type": "postback",
-              "title": "2 - Recargas de celular",
-              "payload": "2"
             }
           ]
         }
@@ -103,7 +93,7 @@ async function callSendAPI(sender_psid, response) {
             // }); 
             console.log("testando retorno api do facebook", axiosResponse.data, axiosResponse.status, axiosResponse.statusText)
           } catch (err) {
-            console.log("deu esse erro", err)
+            console.log("deu esse erro", err.status, err.statusText, err)
           }
 }
 
