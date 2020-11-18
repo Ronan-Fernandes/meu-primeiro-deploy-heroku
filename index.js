@@ -84,7 +84,7 @@ async function callSendAPI(sender_psid, response) {
     "access_token": process.env.PAGE_ACCESS_TOKEN
   }
 
-  const response = await axios.post(url, request_body, { params })
+  const axiosResponse = await axios.post(url, request_body, { params })
 
 
     // const test = await request({
