@@ -24,24 +24,35 @@ function handleMessage(sender_psid, received_message) {
       "attachment": {
         "type": "template",
         "payload": {
-          "template_type": "generic",
-          "elements": [{
-            "title": "Menu Inicial",
-            "subtitle": "Realize operações, tire suas duvidas e muito mais.\n seu saldo é *R$ 303,50\nO que você quer ver agora?\n",
-            // "image_url": attachment_url,
-            "buttons": [
-              {
-                "type": "postback",
-                "title": "1 - Deposito",
-                "payload": "1",
-              },
-              {
-                "type": "postback",
-                "title": "2 - Recargas de celular",
-                "payload": "2",
-              }
-            ],
-          }]
+          "template_type": "button",
+          "text": "Menu Inicial\nRealize operações, tire suas duvidas e muito mais.\n seu saldo é *R$ 303,50\nO que você quer ver agora?\n",
+          "buttons": [
+            {
+              "type": "postback",
+              "title": "1 - Deposito",
+              "payload": "1"
+            },
+            {
+              "type": "postback",
+              "title": "2 - Recargas de celular",
+              "payload": "2"
+            },
+            {
+              "type": "postback",
+              "title": "2 - Recargas de celular",
+              "payload": "2"
+            },
+            {
+              "type": "postback",
+              "title": "2 - Recargas de celular",
+              "payload": "2"
+            },
+            {
+              "type": "postback",
+              "title": "2 - Recargas de celular",
+              "payload": "2"
+            }
+          ]
         }
       }
     }
