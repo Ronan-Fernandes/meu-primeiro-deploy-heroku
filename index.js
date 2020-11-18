@@ -69,7 +69,7 @@ function handlePostback(sender_psid, received_postback) {
 }
 
 // Sends response messages via the Send API
-function callSendAPI(sender_psid, response) {
+async function callSendAPI(sender_psid, response) {
     // Construct the message body
     const request_body = {
       "recipient": {
@@ -78,7 +78,7 @@ function callSendAPI(sender_psid, response) {
       "message": response
     };
 
-    request({
+    const test = await request({
       "uri": "https://graph.facebook.com/v2.6/me/messages",
       "qs": { "access_token": process.env.PAGE_ACCESS_TOKEN },
       "method": "POST",
@@ -90,6 +90,7 @@ function callSendAPI(sender_psid, response) {
         console.error("Unable to send message:" + err);
       }
     }); 
+    console.log("testando retorno api do facebook", test)
 }
 
 app.get('/webhook', (req, res) => {
