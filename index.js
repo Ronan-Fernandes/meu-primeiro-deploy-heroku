@@ -70,6 +70,8 @@ function handlePostback(sender_psid, received_postback) {
 
 // Sends response messages via the Send API
 async function callSendAPI(sender_psid, response) {
+  try {
+
     // Construct the message body
     const request_body = {
       "recipient": {
@@ -77,29 +79,32 @@ async function callSendAPI(sender_psid, response) {
       },
       "message": response
     };
-
-  const url = "https://graph.facebook.com/v2.6/me/messages";
-
-  const params = {
-    "access_token": process.env.PAGE_ACCESS_TOKEN
-  }
-
-  const axiosResponse = await axios.post(url, request_body, { params })
-
-
+    
+    const url = "https://graph.facebook.com/v2.6/me/messages";
+    
+    const params = {
+      "access_token": process.env.PAGE_ACCESS_TOKEN
+    }
+    
+    const axiosResponse = await axios.post(url, request_body, { params })
+    
+    
     // const test = await request({
-    //   "uri": "https://graph.facebook.com/v2.6/me/messages",
-    //   "qs": { "access_token": process.env.PAGE_ACCESS_TOKEN },
-    //   "method": "POST",
-    //   "json": request_body
-    // }, (err, res, body) => {
-    //   if (!err) {
-    //     console.log('message sent!')
-    //   } else {
-    //     console.error("Unable to send message:" + err);
-    //   }
-    // }); 
-    console.log("testando retorno api do facebook", axiosResponse.data, axiosResponse.status, axiosResponse.statusText)
+      //   "uri": "https://graph.facebook.com/v2.6/me/messages",
+      //   "qs": { "access_token": process.env.PAGE_ACCESS_TOKEN },
+      //   "method": "POST",
+      //   "json": request_body
+      // }, (err, res, body) => {
+        //   if (!err) {
+          //     console.log('message sent!')
+          //   } else {
+            //     console.error("Unable to send message:" + err);
+            //   }
+            // }); 
+            console.log("testando retorno api do facebook", axiosResponse.data, axiosResponse.status, axiosResponse.statusText)
+          } catch (err) {
+            console.log("deu esse erro", err)
+          }
 }
 
 app.get('/webhook', (req, res) => {
