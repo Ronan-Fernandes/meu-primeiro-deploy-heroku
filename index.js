@@ -99,7 +99,7 @@ async function callSendAPI(sender_psid, response) {
     //     console.error("Unable to send message:" + err);
     //   }
     // }); 
-    console.log("testando retorno api do facebook", response)
+    console.log("testando retorno api do facebook", axiosResponse)
 }
 
 app.get('/webhook', (req, res) => {
