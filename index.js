@@ -21,30 +21,30 @@ function handleMessage(sender_psid, received_message) {
     // console.log(received_message.attachments[0]);
     // const attachment_url = received_message.attachments[0].payload.url;
     response = {
-      "attachment": {
-        "type": "template",
-        "payload": {
-          "template_type": "button",
-          "text": "Menu Inicial\nRealize operações, tire suas duvidas e muito mais.\n seu saldo é *R$ 303,50\nO que você quer ver agora?\n",
-          "buttons": [
-            {
-              "type": "postback",
-              "title": "1 - Deposito",
-              "payload": "1"
-            },
-            {
-              "type": "postback",
-              "title": "2 - Recargas de celular",
-              "payload": "2"
-            },
-            {
-              "type": "postback",
-              "title": "2 - Recargas de celular",
-              "payload": "2"
-            }
-          ]
+      "persistent_menu": [
+        {
+            "locale": "default",
+            "composer_input_disabled": false,
+            "call_to_actions": [
+                {
+                    "type": "postback",
+                    "title": "Talk to an agent",
+                    "payload": "CARE_HELP"
+                },
+                {
+                    "type": "postback",
+                    "title": "Outfit suggestions",
+                    "payload": "CURATION"
+                },
+                {
+                    "type": "web_url",
+                    "title": "Shop now",
+                    "url": "https://www.originalcoastclothing.com/",
+                    "webview_height_ratio": "full"
+                }
+            ]
         }
-      }
+    ]
     }
   }
   
